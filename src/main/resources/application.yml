@@ -1,0 +1,37 @@
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 940084zxw
+    url: jdbc:mysql://192.168.1.9:3306/access
+    driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 5
+    maxWait: 20
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    poolPreparedStatements: true
+    removeAbandoned: true
+    removeAbandonedTimeout: 180
+    logAbandoned: true
+
+    filter: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDatasourceStat: true
+    ConnectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  redis:
+    database: 0
+    host: 192.168.1.6
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+        shutdown-timeout: 100ms
+
+
+
